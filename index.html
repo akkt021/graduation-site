@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>桜の背景</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-image: url('https://cdn.pixabay.com/photo/2022/03/20/18/31/cherry-blossom-7081566_960_720.png'); /* 桜の背景画像 */
+            background-size: cover; /* 画面全体に拡大縮小 */
+            background-repeat: no-repeat; /* 画像の繰り返しを無効化 */
+            background-position: center center; /* 中央に配置 */
+            font-family: Arial, sans-serif;
+            color: #ffffff; /* 白色の文字 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden; /* コンテンツが画面を超えないようにする */
+            animation: fadeInBackground 3s ease-in-out; /* 背景のフェードイン */
+        }
+        .message {
+            font-size: 2rem;
+            line-height: 1.6;
+            font-weight: bold;
+            text-shadow: 
+                2px 2px 0 #808080, /* グレーの文字枠（右下） */
+               -2px 2px 0 #808080, /* グレーの文字枠（左下） */
+                2px -2px 0 #808080, /* グレーの文字枠（右上） */
+               -2px -2px 0 #808080, /* グレーの文字枠（左上） */
+                0px 2px 0 #808080, /* グレーの文字枠（下） */
+                2px 0px 0 #808080, /* グレーの文字枠（右） */
+               -2px 0px 0 #808080, /* グレーの文字枠（左） */
+                0px -2px 0 #808080; /* グレーの文字枠（上） */
+            animation: fadeIn 3s ease-in-out; /* 文字のフェードインアニメーション */
+        }
+        .message .main {
+            font-size: 72px;
+            margin-bottom: 20px;
+        }
+
+        /* 背景のフェードインアニメーション */
+        @keyframes fadeInBackground {
+            0% {
+                opacity: 0; /* 最初は背景が透明 */
+            }
+            100% {
+                opacity: 1; /* 最後は完全に表示 */
+            }
+        }
+
+        /* 文字のフェードインアニメーション */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0; /* 最初は文字が透明 */
+            }
+            100% {
+                opacity: 1; /* 最後は完全に表示 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="message">
+        <div class="main">卒業おめでとう！</div>
+        <div class="sub">
+            １年間でしたが、いつも明るく、何事にも一生懸命取り組むみんなとの体育の時間がとても楽しかったです<br>
+            挨拶やありがとう、ごめんなさい、そして、一生懸命さ、これだけはこれからも大切にしてください！<br>
+            素晴らしい担任の先生方への感謝を忘れずに次のステージも楽しんでください！
+        </div>
+    </div>
+</body>
+</html>
