@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ビューポート設定 -->
     <title>桜の背景</title>
     <style>
         body {
@@ -23,7 +23,7 @@
         }
         .message {
             z-index: 10; /* 背景画像より前面に表示 */
-            font-size: 2rem;
+            font-size: 6vw; /* 画面幅に合わせてフォントサイズを調整 */
             line-height: 1.6;
             font-weight: bold;
             text-shadow: 
@@ -34,21 +34,42 @@
             animation: fadeIn 3s ease-in-out; /* フェードイン */
         }
         .message .main {
-            font-size: 72px;
+            font-size: 10vw; /* メインメッセージの文字サイズ */
             margin-bottom: 20px; /* 下の間隔 */
+        }
+        .message .sub {
+            font-size: 4vw; /* サブメッセージの文字サイズ */
         }
         .image-container {
             margin-top: 20px; /* 文字と画像の間隔 */
             z-index: 10; /* 背景よりも前面 */
         }
         .image-container img {
-            width: 40%; /* 画面幅の80% */
+            width: 80%; /* 画面幅の80% */
             height: auto; /* アスペクト比を保持 */
+            max-width: 400px; /* 画像の最大幅を設定 */
         }
         /* フェードインアニメーション */
         @keyframes fadeIn {
             0% { opacity: 0; }
             100% { opacity: 1; }
+        }
+
+        /* スマホ向けの追加設定（画面幅が600px以下のデバイス） */
+        @media (max-width: 600px) {
+            .message {
+                font-size: 8vw; /* スマホ用にフォントサイズを調整 */
+            }
+            .message .main {
+                font-size: 12vw; /* メインメッセージのフォントサイズを調整 */
+            }
+            .message .sub {
+                font-size: 6vw; /* サブメッセージのフォントサイズを調整 */
+            }
+            .image-container img {
+                width: 90%; /* スマホ用に画像サイズを調整 */
+                max-width: none; /* 最大幅制限を解除 */
+            }
         }
     </style>
 </head>
