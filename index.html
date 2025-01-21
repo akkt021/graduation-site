@@ -8,61 +8,52 @@
         body {
             margin: 0;
             height: 100vh;
-            background-image: url('https://cdn.pixabay.com/photo/2022/03/20/18/31/cherry-blossom-7081566_960_720.png'); /* 桜の背景画像 */
+            background-image: url('https://cdn.pixabay.com/photo/2022/03/20/18/31/cherry-blossom-7081566_960_720.png'); /* 背景画像 */
             background-size: cover; /* 画面全体に拡大縮小 */
-            background-repeat: no-repeat; /* 画像の繰り返しを無効化 */
-            background-position: center center; /* 中央に配置 */
+            background-repeat: no-repeat; /* 繰り返しを無効化 */
+            background-position: center center; /* 背景を中央に配置 */
             font-family: Arial, sans-serif;
-            color: #ffffff; /* 白色の文字 */
             display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            overflow: hidden; /* コンテンツが画面を超えないようにする */
-            animation: fadeInBackground 3s ease-in-out; /* 背景のフェードイン */
+            flex-direction: column; /* 縦方向のレイアウト */
+            justify-content: center; /* 中央寄せ */
+            align-items: center; /* 中央寄せ */
+            text-align: center; /* テキストの中央揃え */
+            color: #ffffff; /* 白色の文字 */
+            overflow: hidden; /* 画面を超える要素を非表示にする */
         }
         .message {
+            z-index: 10; /* 背景画像より前面に表示 */
             font-size: 2rem;
             line-height: 1.6;
             font-weight: bold;
             text-shadow: 
-                2px 2px 0 #808080, /* グレーの文字枠（右下） */
-               -2px 2px 0 #808080, /* グレーの文字枠（左下） */
-                2px -2px 0 #808080, /* グレーの文字枠（右上） */
-               -2px -2px 0 #808080, /* グレーの文字枠（左上） */
-                0px 2px 0 #808080, /* グレーの文字枠（下） */
-                2px 0px 0 #808080, /* グレーの文字枠（右） */
-               -2px 0px 0 #808080, /* グレーの文字枠（左） */
-                0px -2px 0 #808080; /* グレーの文字枠（上） */
-            animation: fadeIn 3s ease-in-out; /* 文字のフェードインアニメーション */
+                2px 2px 0 #808080, /* グレーの文字枠 */
+               -2px 2px 0 #808080,
+                2px -2px 0 #808080,
+               -2px -2px 0 #808080;
+            animation: fadeIn 3s ease-in-out; /* フェードイン */
         }
         .message .main {
             font-size: 72px;
-            margin-bottom: 20px;
+            margin-bottom: 20px; /* 下の間隔 */
         }
-
-        /* 背景のフェードインアニメーション */
-        @keyframes fadeInBackground {
-            0% {
-                opacity: 0; /* 最初は背景が透明 */
-            }
-            100% {
-                opacity: 1; /* 最後は完全に表示 */
-            }
+        .image-container {
+            margin-top: 20px; /* 文字と画像の間隔 */
+            z-index: 10; /* 背景よりも前面 */
         }
-
-        /* 文字のフェードインアニメーション */
+        .image-container img {
+            width: 40%; /* 画面幅の80% */
+            height: auto; /* アスペクト比を保持 */
+        }
+        /* フェードインアニメーション */
         @keyframes fadeIn {
-            0% {
-                opacity: 0; /* 最初は文字が透明 */
-            }
-            100% {
-                opacity: 1; /* 最後は完全に表示 */
-            }
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
     </style>
 </head>
 <body>
+    <!-- メッセージ部分 -->
     <div class="message">
         <div class="main">卒業おめでとう！</div>
         <div class="sub">
@@ -71,6 +62,11 @@
             挨拶、感謝、一生懸命さを大切にし、<br>
             次のステージも思いっきり楽しんでください！
         </div>
+    </div>
+
+    <!-- 画像部分 -->
+    <div class="image-container">
+        <img src="sakura.png" alt="卒業を祝う桜の画像">
     </div>
 </body>
 </html>
